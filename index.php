@@ -58,6 +58,8 @@ if (file_exists(__DIR__.'/config.ini')) {
 		<!-- jQuery -->
 		<script src="js/jquery-1.10.2.min.js"></script>
 
+		<script src="js/jwerty.js"></script>
+
 		<!-- Bootstrap core JavaScript -->
 		<script src="bootstrap/js/bootstrap.min.js?v=3.0.2"></script>
 

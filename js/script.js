@@ -16,6 +16,11 @@ var setSectionHeights = function() {
 
 $(document).ready(function(){
 
+	jwerty.key('cmd+r/ctrl+f5/f5', function(event) {
+		event.preventDefault();
+		$('#site').attr('src', $('#site').attr('src'));
+	});
+
 	$('a[data-toggle="tooltip"]').tooltip({
 		placement: 'bottom',
 		container: 'body'
