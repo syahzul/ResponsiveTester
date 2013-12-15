@@ -1,0 +1,78 @@
+<?php
+/**
+ * @package		ResponsiveTester
+ * @copyright	Copyright (C) 2013 Syahril Zulkefli. All rights reserved.
+ * @license		http://opensource.org/licenses/MIT
+ */
+?>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>ResponsiveTester</title>
+		
+		<!-- Bootstrap core CSS -->
+		<link href="bootstrap/css/bootstrap.min.css?v=3.0.2" rel="stylesheet">
+
+		<!-- Font Awesome CSS -->
+		<link href="fonts/font-awesome/css/font-awesome.min.css?v=4.0.3" rel="stylesheet">
+
+		<!-- Icomoon CSS -->
+		<link href="fonts/icomoon/style.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="css/styler/style.css" rel="stylesheet" type="text/css">
+
+		<style>
+		body {
+			background: #fff;
+		}
+		</style>
+	</head>
+	<body>
+		<h1>ResponsiveTester</h1>
+		<p>Simple way to test your theme or any other websites with different resolution.</p>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h3>Multiple resolutions</h3>
+					<p>View the websites using desktop, tablets and mobile phone screen size.</p>
+				</div>
+				<div class="col-md-4">
+					<h3>Load any websites</h3>
+					<p>You can view and test any websites with different screen size.</p>
+				</div>
+				<div class="col-md-4">
+					<h3>Set local project</h3>
+					<p>Set the configuration values and have your local projects loaded in dropdown menu.</p>
+				</div>
+			</div>
+
+			<hr>
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Credits</h3>
+					<ul class="list-inline">
+						<li><a href="http://getbootstrap.com">Bootstrap</a></li>
+						<li><a href="http://jquery.com">jQuery</a></li>
+						<li><a href="http://fontawesome.io/">Font Awesome</a></li>
+						<li><a href="http://steadysets.com/">Steadysets</a></li>
+						<li><a href="http://php.net/">PHP</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<hr>
+
+			<div class="row">
+				<div class="col-xs-12">Copyright &copy; Syahril Zulkefli. MIT license.</div>
+			</div>
+		</div>
+	</body>
+</html>
