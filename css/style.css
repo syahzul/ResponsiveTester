@@ -215,3 +215,65 @@ footer .list-inline li a:hover {
 .modal {
   text-align: left;
 }
+.screen-xlg {
+  min-width: 1441px;
+  max-width: 100%;
+  -webkit-transition: width 0.3s linear;
+  -moz-transition: width 0.3s linear;
+  -ms-transition: width 0.3s linear;
+  -o-transition: width 0.3s linear;
+  transition: width 0.3s linear;
+}
+.screen-lg {
+  min-width: 993px;
+  -webkit-transition: width 0.3s linear;
+  -moz-transition: width 0.3s linear;
+  -ms-transition: width 0.3s linear;
+  -o-transition: width 0.3s linear;
+  transition: width 0.3s linear;
+}
+.screen-md {
+  min-width: 769px;
+  max-width: 992px;
+  -webkit-transition: width 0.3s linear;
+  -moz-transition: width 0.3s linear;
+  -ms-transition: width 0.3s linear;
+  -o-transition: width 0.3s linear;
+  transition: width 0.3s linear;
+}
+.screen-sm {
+  min-width: 481px;
+  max-width: 768px;
+  -webkit-transition: width 0.3s linear;
+  -moz-transition: width 0.3s linear;
+  -ms-transition: width 0.3s linear;
+  -o-transition: width 0.3s linear;
+  transition: width 0.3s linear;
+}
+.screen-xs {
+  min-width: 321px;
+  max-width: 480px;
+  -webkit-transition: width 0.3s linear;
+  -moz-transition: width 0.3s linear;
+  -ms-transition: width 0.3s linear;
+  -o-transition: width 0.3s linear;
+  transition: width 0.3s linear;
+}
+.screen-xxs {
+  max-width: 320px;
+  -webkit-transition: width 0.3s linear;
+  -moz-transition: width 0.3s linear;
+  -ms-transition: width 0.3s linear;
+  -o-transition: width 0.3s linear;
+  transition: width 0.3s linear;
+}
+@media (min-width: 1441px) {
+  .screen-lg {
+    max-width: 1440px;
+  }
+}
+@media (max-width: 1440px) {
+  .screen-lg {
+    max-width: 100%;
+  }
+}

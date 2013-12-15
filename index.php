@@ -63,9 +63,9 @@ if (file_exists(__DIR__.'/config.ini')) {
 		<!-- Bootstrap core JavaScript -->
 		<script src="bootstrap/js/bootstrap.min.js?v=3.0.2"></script>
 
-		
 		<script>
 			var live_site = '<?php echo live_site(); ?>';
+			var curr_screen = '';
 
 			<?php if ($localProject) : ?>
 			var cur_theme = '<?php echo strtolower($initial['name']); ?>';
@@ -109,8 +109,9 @@ if (file_exists(__DIR__.'/config.ini')) {
 					<?php endif; ?>
 				</ul>
 
-				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="#" class="device-button btn btn-sm btn-default" data-toggle="tooltip" title="Device with screen 993px and up" id="lg"><i class="icon-screen"></i></a></li>
+				<ul class="nav navbar-nav navbar-right device-selector">
+					<li><a href="#" class="device-button btn btn-sm btn-default" data-toggle="tooltip" title="Device with screen 1441px and up" id="xlg"><i class="icon-screen"></i></a></li>
+					<li class="active"><a href="#" class="device-button btn btn-sm btn-default" data-toggle="tooltip" title="Device with screen 993px to 1440px" id="lg"><i class="icon-laptop"></i></a></li>
 					<li><a href="#" class="device-button btn btn-sm btn-default" data-toggle="tooltip" title="Device with screen 992px" id="md"><i class="icon-tablet-landscape"></i></i></a></li>
 					<li><a href="#" class="device-button btn btn-sm btn-default" data-toggle="tooltip" title="Device with screen 768px" id="sm"><i class="icon-tablet"></i></i></a></li>
 					<li><a href="#" class="device-button btn btn-sm btn-default" data-toggle="tooltip" title="Device with screen 480px" id="xs"><i class="icon-phone"></i></i></a></li>

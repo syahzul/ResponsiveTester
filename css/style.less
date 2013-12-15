@@ -199,6 +199,51 @@ footer {
 	text-align: left;
 }
 
-@media (min-width: 550px) {
 
+.screen-xlg {
+	min-width: 1441px;
+	max-width: 100%;
+	.transition(width .3s linear);
+}
+
+.screen-lg {
+	min-width: 993px;
+	.transition(width .3s linear);
+}
+
+.screen-md {
+	min-width: 769px;
+	max-width: 992px;
+	.transition(width .3s linear);
+}
+
+.screen-sm {
+	min-width: 481px;
+	max-width: 768px;
+	.transition(width .3s linear);
+}
+
+.screen-xs {
+	min-width: 321px;
+	max-width: 480px;
+	.transition(width .3s linear);
+}
+
+.screen-xxs {
+	max-width: 320px;
+	.transition(width .3s linear);
+}
+
+
+
+@media (min-width: 1441px) {
+	.screen-lg {
+		max-width: 1440px;
+	}
+}
+
+@media (max-width: 1440px) {
+	.screen-lg {
+		max-width: 100%;
+	}
 }

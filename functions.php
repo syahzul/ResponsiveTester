@@ -106,8 +106,6 @@ function set_current_theme($name)
 	$file = __DIR__.'/config.ini';
 
 	$data = prepare_config($config);
-	pr($data);
-	die;
 	write_config($file, $data);
 }
 

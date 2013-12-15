@@ -13,8 +13,56 @@ var setSectionHeights = function() {
 	}, 500);
 };
 
+var applyScreenClass = function(newClass) {
+	$('#site')
+		.removeClass('screen-xlg')
+		.removeClass('screen-lg')
+		.removeClass('screen-md')
+		.removeClass('screen-sm')
+		.removeClass('screen-xs')
+		.removeClass('screen-xxs')
+		.addClass(newClass);
+};
+
+var showHideScreenButtons = function() {
+	if ($(window).innerWidth() < 1440)
+	{
+		$('#xlg').hide();
+		if ($('#site').hasClass('screen-xlg')) {
+			applyScreenClass('screen-lg');
+			$('.device-selector li.active').removeClass('active');
+			
+			$('#lg').parent('li').addClass('active');
+		}
+	}
+	else if ($(window).innerWidth() > 1440) {
+		$('#xlg').show();
+	}
+};
 
 $(document).ready(function(){
+
+	// set initial screen size based on window width
+	if ($(window).innerWidth() > 1440) {
+		applyScreenClass('screen-xlg');
+		$('.device-selector li.active').removeClass('active');
+		$('#xlg').show().parent('li').addClass('active');
+	}
+	else if ($(window).innerWidth() <= 1440) {
+		applyScreenClass('screen-lg');
+		$('.device-selector li.active').removeClass('active');
+		$('#xlg').hide();
+		$('#lg').parent('li').addClass('active');
+	}
+
+	showHideScreenButtons();
+
+	// all events to be triggered when the screen being resized
+	$(window).resize( function() {
+		setSectionHeights();
+		showHideScreenButtons();
+	});
+
 
 	// when user press CMD+R or CTRL+F5 or F5, reload the iframe content,
 	// not the main app
@@ -31,9 +79,6 @@ $(document).ready(function(){
 
 	// automatically set frame height based on viewport
 	setSectionHeights();
-	$(window).resize( function() {
-		setSectionHeights();
-	});
 
 	// save configuration to config.ini
 	$('#btn-save-config').click( function() {
@@ -54,7 +99,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-	
+
 	$('#config-modal').on('shown.bs.modal', function (e) {
 		$.ajax({
 			url: live_site + '/task.php',
@@ -220,6 +265,7 @@ $(document).ready(function(){
 		return false;
 	});
 
+	showHideScreenButtons();
 
 	// responsive view changer
 	$('.device-button').click( function() {
@@ -232,37 +278,32 @@ $(document).ready(function(){
 		$(this).parent('li').addClass('active');
 
 		switch (id) {
+			case 'xlg':
+				applyScreenClass('screen-xlg');
+				break;
+
 			case 'lg':
-				$('#site').animate({
-					width: '100%'
-				}, 500);
+				applyScreenClass('screen-lg');
 				break;
 
 			case 'md':
-				$('#site').animate({
-					width: 992
-				}, 500);
+				applyScreenClass('screen-md');
 				break;
 
 			case 'sm':
-				$('#site').animate({
-					width: 768
-				}, 500);
+				applyScreenClass('screen-sm');
 				break;
 
 			case 'xs':
-				$('#site').animate({
-					width: 480
-				}, 500);
+				applyScreenClass('screen-xs');
 				break;
 
 			case 'xxs':
-				$('#site').animate({
-					width: 320
-				}, 500);
+				applyScreenClass('screen-xxs');
 				break;
 		}
 
 		return false;
 	});
 });
+
