@@ -2,3 +2,17 @@ ResponsiveTester
 ================
 
 Preview websites in different screen sizes.
+
+# Features
+
+## Multiple resolutions
+View the websites using desktop, tablets and mobile phone screen size.
+
+## Load any websites
+You can view and test any websites with different screen size.
+
+## Set local project
+Set the configuration values and have your local projects loaded in dropdown menu.
+
+# License
+MIT
