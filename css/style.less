@@ -8,7 +8,7 @@
 @import "mixins.less";
 
 body {
-	background: #fff url('../../img/noise-dark.jpg') repeat 0 0;
+	background: #fff url('../img/noise-dark.jpg') repeat 0 0;
 	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	padding-top: 55px;
 	text-align: center;
@@ -154,6 +154,10 @@ footer {
 						display: block;
 						margin-top: 0;
 					}
+
+					&:hover {
+						color: @gray-light;
+					}
 				}
 			}
 
@@ -193,4 +197,8 @@ footer {
 
 .modal {
 	text-align: left;
+}
+
+@media (min-width: 550px) {
+
 }

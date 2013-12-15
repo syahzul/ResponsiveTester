@@ -38,13 +38,33 @@
 		.site-brand {
 			font-size: 60px;
 		}
+		.site-desc {
+			font-size: 40px;
+		}
+		@media (min-width: 321px) and (max-width: 480px) {
+			.site-brand {
+				font-size: 40px;
+			}
+			.site-desc {
+				font-size: 20px;
+			}
+		}
+		@media (max-width: 320px) {
+			.site-brand {
+				font-size: 30px;
+			}
+			.site-desc {
+				font-size: 16px;
+			}
+		}
 		</style>
 	</head>
 	<body>
-		<h1 class="site-brand">ResponsiveTester</h1>
-		<h2>Preview websites in different screen sizes.</h2>
-
 		<div class="container">
+
+			<h1 class="site-brand">ResponsiveTester</h1>
+			<h2 class="site-desc">Preview websites in different screen sizes.</h2>
+
 			<div class="row features">
 				<div class="col-md-4">
 					<i class="icon-phone-landscape"></i>

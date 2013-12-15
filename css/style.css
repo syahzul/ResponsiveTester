@@ -19,7 +19,7 @@
   background-size: cover;
 }
 body {
-  background: #ffffff url('../../img/noise-dark.jpg') repeat 0 0;
+  background: #ffffff url('../img/noise-dark.jpg') repeat 0 0;
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding-top: 55px;
   text-align: center;
@@ -185,6 +185,9 @@ footer .list-inline li a:hover {
 .navbar .nav li a.device-button i {
   display: block;
   margin-top: 0;
+}
+.navbar .nav li a.device-button:hover {
+  color: #999999;
 }
 .navbar .nav li:last-child .device-button {
   margin-right: 30px;
