@@ -25,7 +25,7 @@
 		<link href="fonts/icomoon/style.css" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
-		<link href="css/styler/style.css" rel="stylesheet" type="text/css">
+		<link href="css/style.css" rel="stylesheet" type="text/css">
 
 		<style>
 		body {

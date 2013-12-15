@@ -38,6 +38,10 @@ if (file_exists(__DIR__.'/config.ini')) {
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<title>ResponsiveTester</title>
+
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100">
+		<link href='http://fonts.googleapis.com/css?family=Denk+One' rel='stylesheet' type='text/css'>
 		
 		<!-- Bootstrap core CSS -->
 		<link href="bootstrap/css/bootstrap.min.css?v=3.0.2" rel="stylesheet">
@@ -49,10 +53,10 @@ if (file_exists(__DIR__.'/config.ini')) {
 		<link href="fonts/icomoon/style.css" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
-		<link href="css/styler/style.css" rel="stylesheet" type="text/css">
+		<link href="css/style.css" rel="stylesheet" type="text/css">
 
 		<!-- jQuery -->
-		<script src="js/libs/jquery-1.10.2.min.js"></script>
+		<script src="js/jquery-1.10.2.min.js"></script>
 
 		<!-- Bootstrap core JavaScript -->
 		<script src="bootstrap/js/bootstrap.min.js?v=3.0.2"></script>
@@ -66,19 +70,13 @@ if (file_exists(__DIR__.'/config.ini')) {
 			<?php endif; ?>
 		</script>
 		
-		<script src="js/styler/script.js"></script>
+		<script src="js/script.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-fixed-top" role="navigation">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="./">ResponsiveTester</a>
+				<a class="navbar-brand" href="./"><i class="icon-phone-portrait"></i> ResponsiveTester</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->

@@ -4,7 +4,7 @@
  * @copyright	Copyright (C) 2013 Syahril Zulkefli. All rights reserved.
  * @license		http://opensource.org/licenses/MIT
  */
- 
+
 require 'functions.php'; 
 $done = false;
 if ($_POST) {
@@ -39,7 +39,7 @@ if ($_POST) {
 		<link href="fonts/icomoon/style.css" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
-		<link href="css/styler/style.css" rel="stylesheet" type="text/css">
+		<link href="css/style.css" rel="stylesheet" type="text/css">
 
 		<style>
 		body {
@@ -75,12 +75,12 @@ if ($_POST) {
 
 
 		<!-- jQuery -->
-		<script src="js/libs/jquery-1.10.2.min.js"></script>
+		<script src="js/jquery-1.10.2.min.js"></script>
 
 		<!-- Bootstrap core JavaScript -->
 		<script src="bootstrap/js/bootstrap.min.js?v=3.0.2"></script>
 
-		<script src="js/styler/script.js"></script>
+		<script src="js/script.js"></script>
 	</head>
 	<body>
 		<div class="container">

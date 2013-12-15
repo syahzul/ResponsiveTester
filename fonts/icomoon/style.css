@@ -23,21 +23,6 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-calendar:before {
-	content: "\e600";
-}
-.icon-print:before {
-	content: "\e601";
-}
-.icon-tablet-landscape:before {
-	content: "\e602";
-}
-.icon-tablet:before {
-	content: "\e603";
-}
-.icon-screen:before {
-	content: "\e604";
-}
 .icon-phone:before {
 	content: "\e605";
 }
@@ -46,6 +31,15 @@
 }
 .icon-phone-landscape:before {
 	content: "\e607";
+}
+.icon-screen:before {
+	content: "\e604";
+}
+.icon-tablet:before {
+	content: "\e603";
+}
+.icon-tablet-landscape:before {
+	content: "\e602";
 }
 .icon-laptop:before {
 	content: "\e608";

@@ -3,7 +3,22 @@
  * @copyright	Copyright (C) 2013 Syahril Zulkefli. All rights reserved.
  * @license		http://opensource.org/licenses/MIT
  */
- 
+
+@import "variables.less";
+@import "mixins.less";
+
+body {
+	background: #fff url('../../img/noise-dark.jpg') repeat 0 0;
+	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	padding-top: 55px;
+	text-align: center;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+}
+
 #site {
 	border: 0;
 	height: 100%;
@@ -22,25 +37,42 @@
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-body {
-	background: #fff url('../../img/noise-dark.jpg') repeat 0 0;
-	padding-top: 55px;
-	text-align: center;
-}
+
 
 .navbar {
 	background-color: #fff;
 	border: 0;
-	border-bottom: solid 5px #ff7a04;
+	border-bottom: solid 5px lighten(@brand-warning, 5%);
 	margin-bottom: 0;
 	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 
+	.navbar-brand {
+		color: #666;
+		font-family: 'Denk One', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		.transition;
+		i {
+			color: #ccc;
+		}
+
+		&:hover {
+			color: @brand-success;
+			.transition;
+		}
+	}
+
 	.nav {
+		
 		li {
 			text-align: left;
 			a {
 				display: block;
 				text-align: left;
+				.transition;
+
+				&:hover {
+					color: #fff;
+					background-color: lighten(@brand-success, 5%);
+				}
 
 				&#xxs {
 					font-size: 13px;

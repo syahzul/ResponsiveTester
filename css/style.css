@@ -1,9 +1,37 @@
 /**
- * @package   ResponsiveTester
- * @copyright Copyright (C) 2013 Syahril Zulkefli. All rights reserved.
- * @license   http://opensource.org/licenses/MIT
+ * @package		ResponsiveTester
+ * @copyright	Copyright (C) 2013 Syahril Zulkefli. All rights reserved.
+ * @license		http://opensource.org/licenses/MIT
  */
- 
+.align-center {
+  text-align: center;
+}
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.background-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body {
+  background: #ffffff url('../../img/noise-dark.jpg') repeat 0 0;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding-top: 55px;
+  text-align: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
 #site {
   border: 0;
   height: 100%;
@@ -20,17 +48,32 @@
   width: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-body {
-  background: #ffffff url('../../img/noise-dark.jpg') repeat 0 0;
-  padding-top: 55px;
-  text-align: center;
-}
 .navbar {
   background-color: #fff;
   border: 0;
-  border-bottom: solid 5px #ff7a04;
+  border-bottom: solid 5px #f1a942;
   margin-bottom: 0;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+.navbar .navbar-brand {
+  color: #666;
+  font-family: 'Denk One', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.navbar .navbar-brand i {
+  color: #ccc;
+}
+.navbar .navbar-brand:hover {
+  color: #1ece8e;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 .navbar .nav li {
   text-align: left;
@@ -38,6 +81,15 @@ body {
 .navbar .nav li a {
   display: block;
   text-align: left;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.navbar .nav li a:hover {
+  color: #fff;
+  background-color: #26df9c;
 }
 .navbar .nav li a#xxs {
   font-size: 13px;
