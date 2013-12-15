@@ -101,17 +101,11 @@ if (file_exists(__DIR__.'/config.ini')) {
 						</ul>
 					</li>
 
-					<li><a href="#" id="btn-compile" class="btn btn-danger">Compile &raquo;</a></li>
-					<li><a href="#" id="btn-close-compile" class="btn btn-info" style="display: none;">&laquo; Back</a></li>
-
-					<li><a href="#" id="btn-history" class="btn btn-default" data-toggle="modal" data-target="#compile-modal">History &raquo;</a></li>
 					<li><a href="#" id="btn-config" class="btn btn-default" data-toggle="modal" data-target="#config-modal"><i class="fa fa-cogs"></i> Configs</a></li>
 					<?php else : ?>
 					<li><a href="#" id="btn-install" class="btn btn-danger">Set Local Project &raquo;</a></li>
 					<?php endif; ?>
 				</ul>
-
-				
 
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><a href="#" class="device-button btn btn-sm btn-default" data-toggle="tooltip" title="Device with screen 993px and up" id="lg"><i class="icon-screen"></i></a></li>
@@ -186,5 +180,19 @@ if (file_exists(__DIR__.'/config.ini')) {
 		<?php endif; ?>
 
 		<iframe id="site" src="<?php echo $initial['url']; ?>"></iframe>
+
+		<footer class="row">
+			<div class="col-md-6">
+				&copy; <a href="http://www.syahzul.com">Syahril Zulkefli</a>
+			</div>
+			<div class="col-md-6 align-right">
+				<ul class="list-inline">
+					<li><a href="https://github.com/syahzul"><i class="fa fa-github-square"></i></a></li>
+					<li><a href="https://www.facebook.com/syahzul"><i class="fa fa-facebook-square"></i></a></li>
+					<li><a href="https://twitter.com/syahzul"><i class="fa fa-twitter-square"></i></a></li>
+					<li><a href="http://my.linkedin.com/in/syahzul/"><i class="fa fa-linkedin-square"></i></a></li>
+				</ul>
+			</div>
+		</footer>
 	</body>
 </html>

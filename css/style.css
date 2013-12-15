@@ -32,6 +32,12 @@ h5 {
   font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
+a {
+  color: #1ece8e;
+}
+a:hover {
+  text-decoration: none;
+}
 #site {
   border: 0;
   height: 100%;
@@ -47,6 +53,40 @@ h5 {
   min-width: 100%;
   width: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+footer {
+  background-color: #fff;
+  border-top: solid 2px #f1a942;
+  bottom: 0;
+  font-size: 12px;
+  left: 0;
+  right: 0;
+  padding: 5px 10px;
+  position: fixed;
+  text-align: left;
+}
+footer .list-inline {
+  margin-bottom: 0;
+}
+footer .list-inline li {
+  padding: 0 0 0 5px;
+}
+footer .list-inline li a {
+  color: #999999;
+  font-size: 14px;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+footer .list-inline li a:hover {
+  color: #555555;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 .navbar {
   background-color: #fff;

@@ -19,6 +19,13 @@ h1, h2, h3, h4, h5 {
 	font-weight: 300;
 }
 
+a {
+	color: @brand-success;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 #site {
 	border: 0;
 	height: 100%;
@@ -37,7 +44,33 @@ h1, h2, h3, h4, h5 {
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+footer {
+	background-color: #fff;
+	border-top: solid 2px lighten(@brand-warning, 5%);
+	bottom: 0;
+	font-size: 12px;
+	left: 0;
+	right: 0;
+	padding: 5px 10px;
+	position: fixed;
+	.align-left;
 
+	.list-inline {
+		margin-bottom: 0;
+		li {
+			padding: 0 0 0 5px;
+			a {
+				color: @gray-light;
+				font-size: 14px;
+				.transition;
+				&:hover {
+					color: @gray;
+					.transition;
+				}
+			}
+		}
+	}
+}
 
 .navbar {
 	background-color: #fff;
