@@ -54,16 +54,24 @@ a:hover {
   width: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
+.features {
+  margin: 50px 0;
+}
+.features i {
+  font-size: 70px;
+}
 footer {
   background-color: #fff;
+  font-size: 12px;
+  text-align: left;
+}
+footer.fixed {
   border-top: solid 2px #f1a942;
   bottom: 0;
-  font-size: 12px;
   left: 0;
   right: 0;
   padding: 5px 10px;
   position: fixed;
-  text-align: left;
 }
 footer .list-inline {
   margin-bottom: 0;
@@ -82,6 +90,26 @@ footer .list-inline li a {
 }
 footer .list-inline li a:hover {
   color: #555555;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.site-brand {
+  color: #666;
+  font-family: 'Denk One', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.site-brand i {
+  color: #ccc;
+}
+.site-branda:hover {
+  color: #1ece8e;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   -ms-transition: all 0.3s linear;
@@ -107,7 +135,7 @@ footer .list-inline li a:hover {
 .navbar .navbar-brand i {
   color: #ccc;
 }
-.navbar .navbar-brand:hover {
+.navbar .navbar-branda:hover {
   color: #1ece8e;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;

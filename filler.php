@@ -14,6 +14,10 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<title>ResponsiveTester</title>
+
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100">
+		<link href='http://fonts.googleapis.com/css?family=Denk+One' rel='stylesheet' type='text/css'>
 		
 		<!-- Bootstrap core CSS -->
 		<link href="bootstrap/css/bootstrap.min.css?v=3.0.2" rel="stylesheet">
@@ -31,23 +35,29 @@
 		body {
 			background: #fff;
 		}
+		.site-brand {
+			font-size: 60px;
+		}
 		</style>
 	</head>
 	<body>
-		<h1>ResponsiveTester</h1>
-		<p>Simple way to test your theme or any other websites with different resolution.</p>
+		<h1 class="site-brand">ResponsiveTester</h1>
+		<h2>Preview websites in different screen sizes.</h2>
 
 		<div class="container">
-			<div class="row">
+			<div class="row features">
 				<div class="col-md-4">
+					<i class="icon-phone-landscape"></i>
 					<h3>Multiple resolutions</h3>
 					<p>View the websites using desktop, tablets and mobile phone screen size.</p>
 				</div>
 				<div class="col-md-4">
+					<i class="fa fa-globe"></i>
 					<h3>Load any websites</h3>
 					<p>You can view and test any websites with different screen size.</p>
 				</div>
 				<div class="col-md-4">
+					<i class="fa fa-cogs"></i>
 					<h3>Set local project</h3>
 					<p>Set the configuration values and have your local projects loaded in dropdown menu.</p>
 				</div>
@@ -68,11 +78,6 @@
 				</div>
 			</div>
 
-			<hr>
-
-			<div class="row">
-				<div class="col-xs-12">Copyright &copy; Syahril Zulkefli. MIT license.</div>
-			</div>
 		</div>
 	</body>
 </html>

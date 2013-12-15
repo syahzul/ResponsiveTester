@@ -181,9 +181,9 @@ if (file_exists(__DIR__.'/config.ini')) {
 
 		<iframe id="site" src="<?php echo $initial['url']; ?>"></iframe>
 
-		<footer class="row">
+		<footer class="row fixed">
 			<div class="col-md-6">
-				&copy; <a href="http://www.syahzul.com">Syahril Zulkefli</a>
+				&copy; <a href="http://www.syahzul.com">Syahril Zulkefli</a>. <a href="http://opensource.org/licenses/MIT">MIT</a> license.
 			</div>
 			<div class="col-md-6 align-right">
 				<ul class="list-inline">

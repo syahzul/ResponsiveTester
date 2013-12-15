@@ -4,7 +4,7 @@
  * @copyright	Copyright (C) 2013 Syahril Zulkefli. All rights reserved.
  * @license		http://opensource.org/licenses/MIT
  */
- 
+
 require 'functions.php';
 
 // get the task
@@ -49,7 +49,7 @@ switch ($task) {
 	case 'config':
 		$config = read_config();
 		echo json_encode($data);
-		break;	
+		break;
 
 	default:
 		die;
