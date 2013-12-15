@@ -16,22 +16,26 @@ var setSectionHeights = function() {
 
 $(document).ready(function(){
 
+	// when user press CMD+R or CTRL+F5 or F5, reload the iframe content,
+	// not the main app
 	jwerty.key('cmd+r/ctrl+f5/f5', function(event) {
 		event.preventDefault();
 		$('#site').attr('src', $('#site').attr('src'));
 	});
 
+	// trigger tooltips
 	$('a[data-toggle="tooltip"]').tooltip({
 		placement: 'bottom',
 		container: 'body'
 	});
 
+	// automatically set frame height based on viewport
 	setSectionHeights();
 	$(window).resize( function() {
 		setSectionHeights();
 	});
 
-
+	// save configuration to config.ini
 	$('#btn-save-config').click( function() {
 		$.ajax({
 			url: live_site + '/task.php',
@@ -50,7 +54,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-
+	
 	$('#config-modal').on('shown.bs.modal', function (e) {
 		$.ajax({
 			url: live_site + '/task.php',
