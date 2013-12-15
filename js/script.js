@@ -37,7 +37,7 @@ $(document).ready(function(){
 				excludes: $('#input_excludes').val()
 			},
 			type: 'get',
-			success: function(r) {
+			success: function() {
 				$('#config-modal').modal('hide');
 				$('.close-modal').trigger('click');
 			}
@@ -60,7 +60,7 @@ $(document).ready(function(){
 				$('#input_base_path').val(r.base_path);
 			}
 		});
-	})
+	});
 
 
 	// call build script
@@ -118,7 +118,7 @@ $(document).ready(function(){
 			dataType: 'json',
 			type: 'get',
 			success: function(r) {
-				//alert(r);
+
 				var html = '';
 				html += '<ul class="list-unstyled">';
 				r.forEach( function(item) {
@@ -127,7 +127,7 @@ $(document).ready(function(){
 				html += '</ul>';
 
 				$('#compile-modal .modal-body').html(html).modal('show');
-				$('#compile-modal').modal('show')
+				$('#compile-modal').modal('show');
 			}
 		});
 
@@ -143,7 +143,20 @@ $(document).ready(function(){
 
 	// form view site
 	$('#btn-viewsite').click( function() {
-		$('#site').attr('src', $('#site-url').val());
+
+		// get the url entered by user
+		var url = $('#site-url').val();
+
+		// regular expression to check if the protocol is present
+		var regex = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/gi;
+		
+		if ( ! regex.test(url))
+		{
+			url = 'http://' + url;
+			$('#site-url').val(url);
+		}
+
+		$('#site').attr('src', url);
 		return false;
 	});
 
