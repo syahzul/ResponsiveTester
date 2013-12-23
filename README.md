@@ -14,5 +14,8 @@ You can view and test any websites with different screen size.
 ## Set local project
 Set the configuration values and have your local projects loaded in dropdown menu.
 
+### Known Issue
+Some websites, like Google, Facebook and Twitter automatically remove iframe. There's nothing we can do about it.
+
 # License
-MIT
+[MIT](http://opensource.org/licenses/MIT)
