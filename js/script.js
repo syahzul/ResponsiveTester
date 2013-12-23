@@ -13,74 +13,20 @@ var setSectionHeights = function() {
 	}, 500);
 };
 
-var applyScreenClass = function(newClass) {
-	$('#site')
-		.removeClass('screen-xlg')
-		.removeClass('screen-lg')
-		.removeClass('screen-md')
-		.removeClass('screen-sm')
-		.removeClass('screen-xs')
-		.removeClass('screen-xxs')
-		.addClass(newClass);
-};
-
-var showHideScreenButtons = function() {
-	if ($(window).innerWidth() < 1440)
-	{
-		$('#xlg').hide();
-		if ($('#site').hasClass('screen-xlg')) {
-			applyScreenClass('screen-lg');
-			$('.device-selector li.active').removeClass('active');
-			
-			$('#lg').parent('li').addClass('active');
-		}
-	}
-	else if ($(window).innerWidth() > 1440) {
-		$('#xlg').show();
-	}
-};
 
 $(document).ready(function(){
 
-	// set initial screen size based on window width
-	if ($(window).innerWidth() > 1440) {
-		applyScreenClass('screen-xlg');
-		$('.device-selector li.active').removeClass('active');
-		$('#xlg').show().parent('li').addClass('active');
-	}
-	else if ($(window).innerWidth() <= 1440) {
-		applyScreenClass('screen-lg');
-		$('.device-selector li.active').removeClass('active');
-		$('#xlg').hide();
-		$('#lg').parent('li').addClass('active');
-	}
-
-	showHideScreenButtons();
-
-	// all events to be triggered when the screen being resized
-	$(window).resize( function() {
-		setSectionHeights();
-		showHideScreenButtons();
-	});
-
-
-	// when user press CMD+R or CTRL+F5 or F5, reload the iframe content,
-	// not the main app
-	jwerty.key('cmd+r/ctrl+f5/f5', function(event) {
-		event.preventDefault();
-		$('#site').attr('src', $('#site').attr('src'));
-	});
-
-	// trigger tooltips
 	$('a[data-toggle="tooltip"]').tooltip({
 		placement: 'bottom',
 		container: 'body'
 	});
 
-	// automatically set frame height based on viewport
 	setSectionHeights();
+	$(window).resize( function() {
+		setSectionHeights();
+	});
 
-	// save configuration to config.ini
+
 	$('#btn-save-config').click( function() {
 		$.ajax({
 			url: live_site + '/task.php',
@@ -91,9 +37,12 @@ $(document).ready(function(){
 				excludes: $('#input_excludes').val()
 			},
 			type: 'get',
-			success: function() {
+			success: function(r) {
 				$('#config-modal').modal('hide');
 				$('.close-modal').trigger('click');
+
+				// refresh the page
+				window.location = live_site;
 			}
 		});
 		return false;
@@ -114,79 +63,7 @@ $(document).ready(function(){
 				$('#input_base_path').val(r.base_path);
 			}
 		});
-	});
-
-
-	// call build script
-	$('#btn-compile').click( function() {
-
-		$('#build-container').remove();
-
-		// get the info
-		$.ajax({
-			url: live_site + '/task.php',
-			data: {
-				id: cur_theme,
-				task: 'build'
-			},
-			dataType: 'json',
-			type: 'get',
-			success: function(r) {
-				$('body').append('<iframe id="build-container" src="' + r.url + '/build.php" style="display: none;"></iframe>');
-				$('#build-container').css({
-					'min-height': $(window).innerHeight() - 55
-				}).slideDown('fast');
-
-				$('#site').hide();
-
-				$('#btn-compile').hide();
-				$('#btn-close-compile').show();
-			},
-		});
-
-		return false;
-	});
-
-
-	// close compiler iframe
-	$('#btn-close-compile').click( function() {
-		$('#site').slideDown('500', function() {
-			$('#build-container').slideUp('fast');	
-		});
-		$('#btn-compile').show();
-		$('#btn-close-compile').hide();
-		return false;
-	});
-
-
-	// show build history
-	$('#btn-history').click( function() {
-		
-		// get the info
-		$.ajax({
-			url: live_site + '/task.php',
-			data: {
-				id: cur_theme,
-				task: 'detail'
-			},
-			dataType: 'json',
-			type: 'get',
-			success: function(r) {
-
-				var html = '';
-				html += '<ul class="list-unstyled">';
-				r.forEach( function(item) {
-					html += '<li><a href="'+item.url+'">' + item.name + '</a></li>';
-				});
-				html += '</ul>';
-
-				$('#compile-modal .modal-body').html(html).modal('show');
-				$('#compile-modal').modal('show');
-			}
-		});
-
-		return false;
-	});
+	})
 
 
 	// workaround for modal backdrop not closing
@@ -197,20 +74,7 @@ $(document).ready(function(){
 
 	// form view site
 	$('#btn-viewsite').click( function() {
-
-		// get the url entered by user
-		var url = $('#site-url').val();
-
-		// regular expression to check if the protocol is present
-		var regex = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/gi;
-		
-		if ( ! regex.test(url))
-		{
-			url = 'http://' + url;
-			$('#site-url').val(url);
-		}
-
-		$('#site').attr('src', url);
+		$('#site').attr('src', $('#site-url').val());
 		return false;
 	});
 
@@ -265,7 +129,6 @@ $(document).ready(function(){
 		return false;
 	});
 
-	showHideScreenButtons();
 
 	// responsive view changer
 	$('.device-button').click( function() {
@@ -278,32 +141,37 @@ $(document).ready(function(){
 		$(this).parent('li').addClass('active');
 
 		switch (id) {
-			case 'xlg':
-				applyScreenClass('screen-xlg');
-				break;
-
 			case 'lg':
-				applyScreenClass('screen-lg');
+				$('#site').animate({
+					width: '100%'
+				}, 500);
 				break;
 
 			case 'md':
-				applyScreenClass('screen-md');
+				$('#site').animate({
+					width: 992
+				}, 500);
 				break;
 
 			case 'sm':
-				applyScreenClass('screen-sm');
+				$('#site').animate({
+					width: 768
+				}, 500);
 				break;
 
 			case 'xs':
-				applyScreenClass('screen-xs');
+				$('#site').animate({
+					width: 480
+				}, 500);
 				break;
 
 			case 'xxs':
-				applyScreenClass('screen-xxs');
+				$('#site').animate({
+					width: 320
+				}, 500);
 				break;
 		}
 
 		return false;
 	});
 });
-

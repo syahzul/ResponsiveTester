@@ -7,10 +7,11 @@
 
 require 'functions.php';
 
-$localProject 	= false;
-$config  		= null;
-$folders 		= null;
-$initial['url'] = live_site().'/filler.php';
+$localProject 	 = false;
+$config  		 = null;
+$folders 		 = null;
+$initial['name'] = 'Demo';
+$initial['url']  = live_site().'/filler.php';
 
 if (file_exists(__DIR__.'/config.ini')) {
 	
@@ -24,7 +25,12 @@ if (file_exists(__DIR__.'/config.ini')) {
 
 	$data = get_folders($config);
 	$folders = $data['folders'];
-	$initial = $data['initial'];
+
+	// make sure the folder is exists
+	if (is_dir($config['base_path'].'/'.$data['initial']['name'])) {
+		$initial['url']  = live_site().'/filler.php';
+		$initial['name'] = 'Demo';
+	}
 
 	$localProject = true;
 }
