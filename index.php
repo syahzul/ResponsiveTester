@@ -28,8 +28,8 @@ if (file_exists(__DIR__.'/config.ini')) {
 
 	// make sure the folder is exists
 	if (is_dir($config['base_path'].'/'.$data['initial']['name'])) {
-		$initial['url']  = live_site().'/filler.php';
-		$initial['name'] = 'Demo';
+		$initial['url']  = $data['initial']['url'];
+		$initial['name'] = $data['initial']['name'];
 	}
 
 	$localProject = true;
