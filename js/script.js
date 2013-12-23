@@ -40,6 +40,9 @@ $(document).ready(function(){
 			success: function(r) {
 				$('#config-modal').modal('hide');
 				$('.close-modal').trigger('click');
+
+				// refresh the page
+				window.location = live_site;
 			}
 		});
 		return false;
@@ -61,78 +64,6 @@ $(document).ready(function(){
 			}
 		});
 	})
-
-
-	// call build script
-	$('#btn-compile').click( function() {
-
-		$('#build-container').remove();
-
-		// get the info
-		$.ajax({
-			url: live_site + '/task.php',
-			data: {
-				id: cur_theme,
-				task: 'build'
-			},
-			dataType: 'json',
-			type: 'get',
-			success: function(r) {
-				$('body').append('<iframe id="build-container" src="' + r.url + '/build.php" style="display: none;"></iframe>');
-				$('#build-container').css({
-					'min-height': $(window).innerHeight() - 55
-				}).slideDown('fast');
-
-				$('#site').hide();
-
-				$('#btn-compile').hide();
-				$('#btn-close-compile').show();
-			},
-		});
-
-		return false;
-	});
-
-
-	// close compiler iframe
-	$('#btn-close-compile').click( function() {
-		$('#site').slideDown('500', function() {
-			$('#build-container').slideUp('fast');	
-		});
-		$('#btn-compile').show();
-		$('#btn-close-compile').hide();
-		return false;
-	});
-
-
-	// show build history
-	$('#btn-history').click( function() {
-		
-		// get the info
-		$.ajax({
-			url: live_site + '/task.php',
-			data: {
-				id: cur_theme,
-				task: 'detail'
-			},
-			dataType: 'json',
-			type: 'get',
-			success: function(r) {
-				//alert(r);
-				var html = '';
-				html += '<ul class="list-unstyled">';
-				r.forEach( function(item) {
-					html += '<li><a href="'+item.url+'">' + item.name + '</a></li>';
-				});
-				html += '</ul>';
-
-				$('#compile-modal .modal-body').html(html).modal('show');
-				$('#compile-modal').modal('show')
-			}
-		});
-
-		return false;
-	});
 
 
 	// workaround for modal backdrop not closing
