@@ -116,7 +116,7 @@ if (file_exists(__DIR__.'/config.ini')) {
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right device-selector">
-					<li><a href="#" class="device-button btn btn-sm btn-default" data-toggle="tooltip" title="Device with screen 1441px and up" id="xlg"><i class="icon-screen"></i></a></li>
+					<!--<li><a href="#" class="device-button btn btn-sm btn-default" data-toggle="tooltip" title="Device with screen 1441px and up" id="xlg"><i class="icon-screen"></i></a></li>-->
 					<li class="active"><a href="#" class="device-button btn btn-sm btn-default" data-toggle="tooltip" title="Device with screen 993px to 1440px" id="lg"><i class="icon-laptop"></i></a></li>
 					<li><a href="#" class="device-button btn btn-sm btn-default" data-toggle="tooltip" title="Device with screen 992px" id="md"><i class="icon-tablet-landscape"></i></i></a></li>
 					<li><a href="#" class="device-button btn btn-sm btn-default" data-toggle="tooltip" title="Device with screen 768px" id="sm"><i class="icon-tablet"></i></i></a></li>
